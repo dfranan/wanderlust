@@ -1,0 +1,53 @@
+
+	<div class="loginWrapAll">
+		<div class="containerLogin">
+			<div class="wrapLogin">
+				<div class="formTitleLogin" style="background-image: url(/images/bg-01.jpg);">
+					<span class="formTitle">
+						Welcome to Wanderlust
+					</span>
+				</div>
+
+				<form class="formLogin validate-form" method="post" action="/login/">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="usuario" placeholder="Enter username">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="pass" placeholder="Enter password">
+						<span class="focus-input100"></span>
+					</div>
+                     <p>   {{mensaje}} </p>
+				
+					<div class="flex-sb-m w-full p-b-30">
+						<div class="">
+							<input class="inputCheckbox" id="ckb1" type="checkbox" name="remember-me">
+							<label class="labelCheckbox" for="ckb1">
+								Remember me
+							</label>
+						</div>
+						<div>
+							<a href="#" class="txt1">
+								Forgot Password?
+							</a>
+						</div>
+						<div>
+							
+							<a href="registro" class="txt1">
+								Create new Account
+							</a>
+						</div>
+					</div>
+
+					<div class="containerBtnLogin">
+						<button class="btnLogin" type="submit">
+							Login
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>

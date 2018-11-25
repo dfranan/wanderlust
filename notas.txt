@@ -1,0 +1,13 @@
+mysql generar base de datos
+tablas
+sing in
+stories
+
+
+
+node
+
+npm install mysql --save
+npm install express-session --save
+npm install fileupload --save
+npm install md5 --save
