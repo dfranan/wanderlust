@@ -1,48 +1,34 @@
 var express = require('express');
 var router = express.Router();
 var bd = require('./bd');
+var session = require('express-session');
 var md5 = require('md5');
 
-
-router.get('/',(req,res)=>{
+router.get('/',function(req,res,next){
     res.render('login');
 });
 
-router.post('/',(req,res)=>{
-    let usuario = req.body.usuario;
-    let password = md5(req.body.pass);
+router.post('/',function(req,res,next){
+    var usuario = req.body.usuario;
+    var pass = md5(req.body.pass);
 
-    console.log(usuario);
-    console.log(password);
+    var consulta = "select * from login where usuario = '"+usuario+"' and password = '"+pass+"';"
 
-    let consulta = "SELECT * FROM LOGIN WHERE USUARIO = '"+usuario+"' AND PASSWORD = '"+password+"'";
-    console.log(consulta);
-    bd.query(consulta, (error, result)=>{
-        console.log('que onda aca');
-        if (error){
-         
-            console.log(error);
-            
+    bd.query(consulta,function(err,result){
+        if(err){
+            console.log(err);
         }else{
-    
         if(result.length > 0){
-            console.log("Bienvenido");
-
-            req.session.usuario = usuario; 
-         
-            console.log(req.session.usuario);
+            req.session.usuario = usuario;
             res.redirect('index');
-            } else  {
-                console.log('holi');
-                // usuario o contraseña incorrectos
-                console.log(error);
-                res.render('login',{mensaje:'Datos incorrectos'});
-            }
-        }
+        }else{
+            res.render('login',{mensaje:"datos incorrectos"});
+        };
+    };
+    
     });
 
 });
-
 
 
 module.exports = router;

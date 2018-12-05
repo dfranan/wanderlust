@@ -33,7 +33,6 @@ app.use('/registro', registro);
 app.use('/profile', panel);
 app.use(session({
   secret:'marcador12345',
-  resave: false,
   saveUninitialized: false,
   cookie:{maxAge:null}}));
 
