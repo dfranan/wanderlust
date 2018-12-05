@@ -11,3 +11,12 @@ npm install mysql --save
 npm install express-session --save
 npm install fileupload --save
 npm install md5 --save
+
+
+
+que es lo que tiene que tener el proyecto
+tres funcionalidades
+registro
+login
+publicaciones
+busqueda
