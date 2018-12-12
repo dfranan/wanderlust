@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var login = require('./routes/login');
 var registro = require('./routes/registro');
 var panel = require('./routes/panel');
+var publicaciones = require('./routes/publicaciones');
 
 
 var app = express();
@@ -31,6 +32,8 @@ app.use('/users', usersRouter);
 app.use('/login', login);
 app.use('/registro', registro);
 app.use('/profile', panel);
+app.use('/publicaciones', publicaciones);
+
 app.use(session({
   secret:'marcador12345',
   saveUninitialized: false,
