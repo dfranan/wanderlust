@@ -1,0 +1,16 @@
+<div class="hero" style="background-image: url(/images/tokio1.jpg)"></div>
+<h2 class="text-center">{{data.title}}</h2>
+<h3><strong class="font-weight-bold">{{data.lugar}}</strong></h3>
+<p>{{data.post}}</p>
+<p>{{data.author}}</p>
+
+
+{{#if data.isFromCurrentUser}}
+<a href="/stories/edit/{{data.id_post}}#formulario">
+    Editar
+</a>
+
+<form action="/stories/eliminar/{{data.id_post}}" method="post">
+    <button class="btn btn-info" name="eliminar" value="eliminar"> Eliminar </button>
+</form>
+{{/if}}

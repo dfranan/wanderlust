@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
-
+const express = require('express')
+const router = express.Router()
+var bd = require('./bd')
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Wanderlust" });
-});
+  bd.query('SELECT id_post, lugar, SUBSTRING(`post`, 1, 80) AS post FROM posts', function(
+    err,
+    result
+  ) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.render('index', { stories: result, usuario: req.session.usuario })
+    }
+  })
+})
 
-module.exports = router;
+module.exports = router

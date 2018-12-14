@@ -115,7 +115,22 @@ label {
 button {
 	outline: none !important;
 	border: none;
-	background: transparent;
+  background: white;
+  padding: 5px;
+  
+}
+
+a.btn {
+  padding: 10px;
+  color: black;
+  background-color: white;
+}
+
+.hero {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 button:hover {

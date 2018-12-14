@@ -56,7 +56,7 @@ INSERT INTO `login` (`id`, `nombre`, `apellido`, `usuario`, `password`) VALUES
 --
 
 CREATE TABLE `posts` (
-  `id_post` int(100) NOT NULL,
+  `id_post` AUTO_INCREMENT int(100) NOT NULL,
   `id_autor` int(100) NOT NULL,
   `titulo` varchar(50) NOT NULL,
   `lugar` varchar(50) NOT NULL,

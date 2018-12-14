@@ -1,86 +1,85 @@
-
 <div class="site-wrap">
 
-    <div class="site-navbar-wrap">
-      <div class="site-navbar-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-10"></div>
-            <div class="col-md-2">
+  <div class="site-navbar-wrap">
+    <div class="site-navbar-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
 
-                 {{#if usuario}}
-                <a href="panel" class="linkUp">
-                    <span class="linkUp">Perfil</span>
-                </a>
-                {{else}}
-                <a href="login" class="linkUp">
-                    <span class="linkUp-Log">Login</span>
-                </a>
-                 <a href="registro" class="linkUp-Log">
-                    <span class="linkUp-Log">Registrarse</span>
-                </a>
-                {{/if}}
+            {{#if usuario}}
+            <a href="/panel" class="linkUp">
+              <span class="linkUp">Perfil</span>
+            </a>
+            {{else}}
+            <a href="/login" class="linkUp">
+              <span class="linkUp-Log">Login</span>
+            </a>
+            <a href="/registro" class="linkUp-Log">
+              <span class="linkUp-Log">Registrarse</span>
+            </a>
+            {{/if}}
 
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="site-navbar">
-        <div class="container py-1">
-          <div class="row align-items-center">
-            <div class="col-12">
-              <nav class="site-navigation text-center" role="navigation">
-                <div class="container">
-                  <ul class="site-menu js-clone-nav d-none d-lg-block">
-                    <li><a href="index">Home</a></li>
-                    <li><a href="profile">Places</a></li>
-                    <li><a href="stories">Stories</a></li>
-                    <li><a href="quest">Questions</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- titulo e imagen -->
-    <div class="intro" style="background-image: url(/images/bg-01.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
+    <div class="site-navbar">
+      <div class="container py-1">
         <div class="row align-items-center">
-          <div class="col-md-7">
-            <span class="sub-text">Wan·der·lust</span>
-            <h3>a strong desire for or impulse to wander or travel and explore the world.</h3>
+          <div class="col-12">
+            <nav class="site-navigation text-center" role="navigation">
+              <div class="container">
+                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/#stories">Stories</a></li>
+                  <li><a href="/#contacto">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
+  </div>
 
-    <div style="background-color:rgb(243, 196, 179);">
-        <div class="container">
-            <div class="row mb-5 justify-content-center">
-            <div class="col-md-6 text-center">
-              <h4 style="padding-top:20px;" class="text-black mb-5"> Escribe tus propias historias</h4>
-            </div>
-            <div class="col-md-8 col-md-offset-2">
-                <form class="form-horizontal" method="post" action="publicaciones/nuevo">
-                    <div class="form-group">
-                        <label for="exampleInputName2">Titulo</label>
-                        <input type="text" class="form-control" placeholder="Ingresa un titulo" name="tituloPost">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail2">Lugar</label>
-                        <input type="text" class="form-control" name="lugarPost">
-                    </div>
-                    <div class="form-group ">
-                        <label for="exampleInputText">Story</label>
-                        <textarea  class="form-control" placeholder="Escribi lo que quieras sobre tus viajes, experiencias y wanderlust" rows="10" cols="40" name="textoPost"></textarea> 
-                    </div>
-                    <button type="submit" class="btn btn-default" style="margin-left:300px;">Subir</button>
-                </form>
-            </div>
+  <!-- titulo e imagen -->
+  <div class="intro" style="background-image: url(/images/bg-01.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <span class="sub-text">Wan·der·lust</span>
+          <h3>a strong desire for or impulse to wander or travel and explore the world.</h3>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background-color:rgb(243, 196, 179);" id="formulario">
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-6 text-center">
+          <h4 style="padding-top:20px;" class="text-black mb-5"> Escribe tus propias historias</h4>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+          <form class="form-horizontal" method="post" action="/stories/{{id_post}}">
+            <div class="form-group">
+              <label for="exampleInputName2">Titulo</label>
+              <input type="text" class="form-control" placeholder="Ingresa un titulo" name="titulo" value="{{titulo}}">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail2">Lugar</label>
+              <input type="text" class="form-control" name="lugar" value="{{lugar}}">
+            </div>
+            <div class="form-group ">
+              <label for="exampleInputText">Story</label>
+              <textarea class="form-control" placeholder="Escribi lo que quieras sobre tus viajes, experiencias y wanderlust"
+                rows="10" cols="40" name="post">{{post}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-default" style="margin-left:300px;">Subir</button>
+          </form>
+        </div>
+      </div>
     </div>
 
     <!--footer  -->
@@ -109,11 +108,11 @@
 
 
           </div>
-          
+
         </div>
 
-          
-        
+
+
       </div>
     </footer>
-</div>
+  </div>

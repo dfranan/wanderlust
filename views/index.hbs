@@ -1,183 +1,177 @@
 <div class="site-wrap">
 
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
+  <div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
       </div>
-      <div class="site-mobile-menu-body"></div>
-    </div> 
-    <!-- .site-mobile-menu -->
-    
-    <!-- parte de arriba + navbar -->
-    <div class="site-navbar-wrap">
-      <div class="site-navbar-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-10"></div>
-            <div class="col-md-2">
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+  <!-- .site-mobile-menu -->
 
-                 {{#if usuario}}
-                <a href="panel" class="linkUp">
-                    <span class="linkUp">Perfil</span>
-                </a>
-                {{else}}
-                <a href="login" class="linkUp">
-                    <span class="linkUp-Log">Login</span>
-                </a>
-                 <a href="registro" class="linkUp-Log">
-                    <span class="linkUp-Log">Registrarse</span>
-                </a>
-                {{/if}}
+  <!-- parte de arriba + navbar -->
+  <div class="site-navbar-wrap">
+    <div class="site-navbar-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
 
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="site-navbar">
-        <div class="container py-1">
-          <div class="row align-items-center">
-            <div class="col-12">
-              <nav class="site-navigation text-center" role="navigation">
-                <div class="container">
-                  <ul class="site-menu js-clone-nav d-none d-lg-block">
-                    <li><a href="index">Home</a></li>
-                    <li><a href="profile">Places</a></li>
-                    <li><a href="stories">Stories</a></li>
-                    <li><a href="quest">Questions</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
+            {{#if usuario}}
+            <a href="/logout" class="linkUp">
+              <span class="linkUp">Log out</span>
+            </a>
+            {{else}}
+            <a href="login" class="linkUp">
+              <span class="linkUp-Log">Login</span>
+            </a>
+            <a href="registro" class="linkUp-Log">
+              <span class="linkUp-Log">Registrarse</span>
+            </a>
+            {{/if}}
+
           </div>
         </div>
       </div>
     </div>
-    
-<!-- titulo e imagen -->
-    <div class="intro" style="background-image: url(/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
+    <div class="site-navbar">
+      <div class="container py-1">
         <div class="row align-items-center">
-          <div class="col-md-7">
-            <span class="sub-text">Wan·der·lust</span>
-            <h3>a strong desire for or impulse to wander or travel and explore the world.</h3>
+          <div class="col-12">
+            <nav class="site-navigation text-center" role="navigation">
+              <div class="container">
+                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="#stories">Stories</a></li>
+                  <li><a href="#contacto">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
+  </div>
 
-   <!-- primer block- historias de wander -->
-    <div class="site-section bg-white">
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-6 text-center">
-            <h2 class="site-heading text-black">Stories of <strong>wanderlust</strong></h2>
-          </div>
+  <!-- titulo e imagen -->
+  <div class="intro" style="background-image: url(/images/hero_bg_1.jpg);" data-aos="fade"
+    data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <span class="sub-text">Wan·der·lust</span>
+          <h3>a strong desire for or impulse to wander or travel and explore the world.</h3>
         </div>
-        <div class="row">
-          <div class="col-lg-4">
+      </div>
+    </div>
+  </div>
+
+  <!-- primer block- historias de wander -->
+  <div class="site-section bg-white" id="stories">
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-6 text-center">
+          <h2 class="site-heading text-black">Stories of <strong>wanderlust</strong></h2>
+        </div>
+      </div>
+      <div class="row">
+        {{!-- RENDER POSTS CON LIST HELPER --}}
+        {{#each stories}}
+        <div class="col-lg-4">
+          <a href="/stories/{{id_post}}">
             <div class="site-block-testimony p-4 text-center">
-              <div class="mb-3">
-                <img src="/images/tailandia1.jpg" alt="Image" class="img-fluid">
-              </div>
-              <div>
-                 <p>Dolores perferendis ipsam animi fuga, dolor pariatur aliquam esse. Modi maiores minus velit iste enim sunt iusto dolore</p>
-                 <p><strong class="font-weight-bold">TAILANDIA</strong></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="site-block-testimony p-4 text-center active">
               <div class="mb-3">
                 <img src="/images/tokio1.jpg" alt="Image" class="img-fluid">
               </div>
               <div>
-                 <p>Dolores perferendis ipsam animi fuga dolor pariatur aliquam esse. Modi maiores minus velit iste enim sunt iusto dolore</p>
-                 <p><strong class="font-weight-bold">TOKIO</strong></p>
+                <p>{{this.post}}...</p>
+                <p><strong class="font-weight-bold">{{this.lugar}}</strong></p>
               </div>
             </div>
+          </a>
+        </div>
+        {{else}}
+        <h2 class="text-center">Todavia no se cargaron stories </h2>
+        {{/each}}
+      </div>
+      <div class="row">
+        {{#if usuario}}
+        <div class="col-12 text-center">
+          <a href="/stories/new" class="btn btn-default">
+            Nueva Storie
+          </a>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <!-- segundo block - formulario de contacto -->
+  <div class="site-section bg-light" id="contacto">
+    <div class="contact-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-6 text-center">
+            <h2 class="site-heading text-black mb-5">Contact <strong>US</strong></h2>
           </div>
-          
-          <div class="col-lg-4">
-            <div class="site-block-testimony p-4 text-center">
-              <div class="mb-3">
-                <img src="/images/peru1.jpg" alt="Image" class="img-fluid">
+          <div class="col-md-8 col-md-offset-2">
+            <form class="form-horizontal" method="" action="">
+              <div class="form-group">
+                <label for="exampleInputName2">Nombre</label>
+                <input type="text" class="form-control" placeholder="Ingresa tu nombre" name="nombreContacto">
               </div>
-              <div>
-                 <p>Dolores perferendis ipsam animi fuga dolor pariatur aliquam esse. Modi maiores minus velit iste enim sunt iusto dolore</p>
-                 <p><strong class="font-weight-bold">PERU</strong></p>
+              <div class="form-group">
+                <label for="exampleInputEmail2">Email</label>
+                <input type="email" class="form-control" name="emailContacto" placeholder="loquesea@example.com">
               </div>
-            </div>
+              <div class="form-group ">
+                <label for="exampleInputText">Mensaje</label>
+                <textarea class="form-control" placeholder="Escribi lo que quieras" name="textoContacto"></textarea>
+              </div>
+              <button type="submit" class="btn btn-default">Enviar</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    
-    <!-- segundo block - formulario de contacto -->
-    <div class="site-section bg-light">
-        <div class="contact-section">
-        <div class="container">
-          <div class="row mb-5 justify-content-center">
-            <div class="col-md-6 text-center">
-              <h2 class="site-heading text-black mb-5">Contact <strong>US</strong></h2>
-            </div>
-                <div class="col-md-8 col-md-offset-2">
-                  <form class="form-horizontal" method="" action="">
-                    <div class="form-group">
-                      <label for="exampleInputName2">Nombre</label>
-                      <input type="text" class="form-control" placeholder="Ingresa tu nombre" name="nombreContacto">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail2">Email</label>
-                      <input type="email" class="form-control" name="emailContacto" placeholder="loquesea@example.com">
-                    </div>
-                    <div class="form-group ">
-                      <label for="exampleInputText">Mensaje</label>
-                     <textarea  class="form-control" placeholder="Escribi lo que quieras" name="textoContacto"></textarea> 
-                    </div>
-                    <button type="submit" class="btn btn-default">Enviar</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-        </div>
-        </div>
-      </div>
+  </div>
+</div>
 
 
 
-    <!--footer  -->
-    <footer class="site-footer border-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <div class="row mb-5">
-              <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Navigation</h3>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Storys</a></li>
-                  <li><a href="#">Contacto</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                </ul>
-              </div>
-            </div>
-
+<!--footer  -->
+<footer class="site-footer border-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <h3 class="footer-heading mb-4">Navigation</h3>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <ul class="list-unstyled">
+              <li><a href="/">Home</a></li>
+              <li><a href="#stories">Stories</a></li>
+              <li><a href="#contacto">Contact</a></li>
+            </ul>
 
           </div>
-          
+          <div class="col-md-6 col-lg-6">
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
         </div>
 
-          
-        
+
       </div>
-    </footer>
+
+    </div>
+
+
+
   </div>
+</footer>
+</div>
