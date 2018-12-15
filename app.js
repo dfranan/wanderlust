@@ -9,6 +9,7 @@ const indexRouter = require('./routes/index')
 const login = require('./routes/login')
 const registro = require('./routes/registro')
 const stories = require('./routes/stories')
+const mail = require('./routes/mail')
 
 const app = express()
 
@@ -38,7 +39,7 @@ app.use('/logout', (req, res) => {
   delete req.session.usuario
   res.redirect('/')
 })
-
+app.unsubscribe('/mail', mail)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404))
