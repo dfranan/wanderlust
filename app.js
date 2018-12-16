@@ -3,8 +3,8 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
-
 const session = require('express-session')
+
 const indexRouter = require('./routes/index')
 const login = require('./routes/login')
 const registro = require('./routes/registro')
@@ -39,7 +39,8 @@ app.use('/logout', (req, res) => {
   delete req.session.usuario
   res.redirect('/')
 })
-app.unsubscribe('/mail', mail)
+
+app.use('/mail', mail)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404))

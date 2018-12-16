@@ -1,59 +1,58 @@
- <!-- parte de arriba + navbar -->
-  <div class="site-navbar-wrap">
-    <div class="site-navbar-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10"></div>
-          <div class="col-md-2">
-
-            {{#if usuario}}
-            <a href="/logout" class="linkUp">
-              <span class="linkUp">Log out</span>
-            </a>
-            {{else}}
-            <a href="login" class="linkUp">
-              <span class="linkUp-Log">Login</span>
-            </a>
-            <a href="registro" class="linkUp-Log">
-              <span class="linkUp-Log">Registrarse</span>
-            </a>
-            {{/if}}
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="site-navbar">
-      <div class="container py-1">
-        <div class="row align-items-center">
-          <div class="col-12">
-            <nav class="site-navigation text-center" role="navigation">
-              <div class="container">
-                <ul class="site-menu js-clone-nav d-none d-lg-block">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="#stories">Stories</a></li>
-                  <li><a href="#contacto">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- titulo e imagen -->
-  <div class="intro" style="background-image: url(/images/tokio1.jpg);" data-aos="fade"
-    data-stellar-background-ratio="0.5">
+<!-- parte de arriba + navbar -->
+<div class="site-navbar-wrap">
+  <div class="site-navbar-top">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-7">
-          <span class="sub-text">{{data.title}}</span>
-          <h3>{{data.lugar}}</h3>
+      <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+
+          {{#if usuario}}
+          <a href="/logout" class="linkUp">
+            <span class="linkUp">Log out</span>
+          </a>
+          {{else}}
+          <a href="login" class="linkUp">
+            <span class="linkUp-Log">Login</span>
+          </a>
+          <a href="registro" class="linkUp-Log">
+            <span class="linkUp-Log">Registrarse</span>
+          </a>
+          {{/if}}
+
         </div>
       </div>
     </div>
   </div>
+  <div class="site-navbar">
+    <div class="container py-1">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <nav class="site-navigation text-center" role="navigation">
+            <div class="container">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#stories">Stories</a></li>
+                <li><a href="/#contacto">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- titulo e imagen -->
+<div class="intro" style="background-image: url(/images/tokio1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <span class="sub-text">{{data.title}}</span>
+        <h3>{{data.lugar}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
 
 <p>{{data.post}}</p>
 <br>
@@ -61,19 +60,19 @@
 <p>{{data.author}}</p>
 
 <br>
-<br>    
+<br>
 <br>
 <br>
 
 {{#if data.isFromCurrentUser}}
 <p><a class="btn btn-info" href="/stories/edit/{{data.id_post}}#formulario" style="color:black;">
     Editar
-</a>
+  </a>
 </p>
 <br>
 
 <form action="/stories/eliminar/{{data.id_post}}" method="post">
-    <button class="btn btn-info" name="eliminar" value="eliminar"> Eliminar </button>
+  <button class="btn btn-info" name="eliminar" value="eliminar"> Eliminar </button>
 </form>
 {{/if}}
 

@@ -1,55 +1,50 @@
-var express = require('express');
-var router = express.Router();
-var nodemailer = require('nodemailer');
+var express = require('express')
+var router = express.Router()
+var nodemailer = require('nodemailer')
 var transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
-    secureConnection: false,
-    port: 587,
-    tls: {
-       ciphers:'SSLv3'
-    },
-    auth: {
-        user: 'wanderlust-master@outlook.com',
-        pass: 'Wanderlust1234'
-    }
-});
+  host: 'smtp-mail.outlook.com',
+  secureConnection: false,
+  port: 587,
+  tls: {
+    ciphers: 'SSLv3',
+  },
+  auth: {
+    user: 'wanderlust.cntct@outlook.com',
+    pass: 'wanderlust1234',
+  },
+})
 
 transporter.verify((error, success) => {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log('Server is ready to take messages');
+    console.log('Server is ready to take messages')
   }
-});
+})
 
 router.get('/', function(req, res, next) {
-  res.render('/#contacto');
-});
+  res.render('/#contacto')
+})
 
-router.post('/', function(req, res, next){
-  var name = req.body.nombreContacto;
-  var email = req.body.emailContacto;
-  var message = req.body.mensajeContacto;
-  var content = 'Name: ${name} \n Email: ${email} \n Message: ${content}';
+router.post('/', function(req, res, next) {
+  const { nombre, email, mensaje } = req.body
+  const content = `Name: ${nombre} \n Email: ${email} \n Message: ${mensaje}`
 
-  var mail = {
-    from: 'wanderlust-master@outlook.com',
-    to: 'guss.995@hotmail.com',  
+  const mail = {
+    from: 'wanderlust.cntct@outlook.com',
+    to: 'wanderlust.cntct@outlook.com',
     subject: 'Contacto Wanderlust',
-    text: req.body.content
-  };
+    text: content,
+  }
 
   transporter.sendMail(mail, (err, data) => {
     if (err) {
-      res.json({
-        msg: 'fail'
-      });
+      console.log(err)
     } else {
-      res.json({
-        msg: 'success'
-      });
-    }:
-  });
-});
+      console.log('Mail successfully sended')
+    }
+    res.redirect('back')
+  })
+})
 
-module.exports = router;
+module.exports = router
